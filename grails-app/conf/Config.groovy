@@ -64,10 +64,11 @@ environments {
         grails.logging.jul.usebridge = true
         grails.dbconsole.enabled = true
         grails.dbconsole.urlRoot = '/admin/dbconsole'
+        grails.plugins.springsecurity.active = false
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://www.javamexico.org/"
     }
 }
 
@@ -96,3 +97,8 @@ log4j = {
     debug  'grails.app.domain'
     debug  'grails.app.services'
 }
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.javamexico.portal.usuarios.Usuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.javamexico.portal.usuarios.UsuarioRol'
+grails.plugins.springsecurity.authority.className = 'org.javamexico.portal.usuarios.Rol'
